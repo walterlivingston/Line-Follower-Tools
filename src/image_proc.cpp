@@ -76,12 +76,12 @@ void imp::drawMainContour(Mat& Input){
     drawContours(Input, contours, maxContourIndex(contours), Scalar(0,255,0), 3);
 }
 
-void imp::drawHoughLines(Mat& Input){
+void imp::drawHoughLines(Mat& Input, double rho, double theta, double thresh, double srn, double stn){
     Mat can;
     cannyGrad(Input, can);
 
     vector<Vec2f> lines; // will hold the results of the detection
-    HoughLines(can, lines, 1, CV_PI/180, 150, 0, 0); // runs the actual detection
+    HoughLines(can, lines, rho, theta, thresh, srn, stn); // runs the actual detection
 
     for(size_t i = 0; i < lines.size(); i++)
     {
@@ -97,12 +97,12 @@ void imp::drawHoughLines(Mat& Input){
     }
 }
 
-void imp::drawPHoughLines(Mat& Input){
+void imp::drawPHoughLines(Mat& Input, double rho, double theta, double thresh, double minL, double maxG){
     Mat can;
     cannyGrad(Input, can);
 
     vector<Vec4i> lines; // will hold the results of the detection
-    HoughLinesP(can, lines, 1, CV_PI/180, 50, 50, 10); // runs the actual detection
+    HoughLinesP(can, lines, rho, theta, thresh, minL, maxG); // runs the actual detection
 
     for(size_t i = 0; i < lines.size(); i++){
         Vec4i l = lines[i];
