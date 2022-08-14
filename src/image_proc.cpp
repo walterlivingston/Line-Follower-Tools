@@ -55,6 +55,14 @@ void imp::laplaceGrad(Mat& Input, Mat& Output){
     lap.convertTo(Output, CV_8U);    
 }
 
+void imp::cannyGrad(Mat& Input, Mat& Output){
+    Mat Input_Gray;
+    cvtColor(Input, Input_Gray, COLOR_BGR2GRAY);
+    // Applying Gaussian Blur to deal with smaller contours
+    GaussianBlur(Input_Gray, Input_Gray, Size(5,5), 0); //$$ Kernal Size (Default is 3,3) Increasing Makes Blurier. Note: Must be odd number $$
+    Canny(Input_Gray, Output, 50, 200, 3);
+}
+
 void imp::drawMainContour(Mat& Input){    
     Mat sat;
     satFilt(Input, sat);
@@ -66,6 +74,27 @@ void imp::drawMainContour(Mat& Input){
     vector<vector<Point>> contours;
     findContours(comb, contours, RETR_TREE, CHAIN_APPROX_SIMPLE);
     drawContours(Input, contours, maxContourIndex(contours), Scalar(0,255,0), 3);
+}
+
+void imp::drawHoughLines(Mat& Input){
+    Mat can;
+    cannyGrad(Input, can);
+
+    vector<Vec2f> lines; // will hold the results of the detection
+    HoughLines(can, lines, 1, CV_PI/180, 150, 0, 0 ); // runs the actual detection
+
+    for( size_t i = 0; i < lines.size(); i++ )
+    {
+        float rho = lines[i][0], theta = lines[i][1];
+        Point pt1, pt2;
+        double a = cos(theta), b = sin(theta);
+        double x0 = a*rho, y0 = b*rho;
+        pt1.x = cvRound(x0 + 1000*(-b));
+        pt1.y = cvRound(y0 + 1000*(a));
+        pt2.x = cvRound(x0 - 1000*(-b));
+        pt2.y = cvRound(y0 - 1000*(a));
+        line(Input, pt1, pt2, Scalar(0,0,255), 3, LINE_AA);
+    }
 }
 
 void imp::hsvTuner(Mat& Input){

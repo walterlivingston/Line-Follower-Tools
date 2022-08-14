@@ -16,6 +16,7 @@ class imp{
         static void hsvFilt(Mat& Input, Mat& Output, Scalar low, Scalar high);
         static void sobelGrad(Mat& Input, Mat& Output);
         static void laplaceGrad(Mat& Input, Mat& Output);
+        static void cannyGrad(Mat& Input, Mat& Output);
 
         static void drawMainContour(Mat& Input);
         static void drawHoughLines(Mat& Input);
