@@ -81,9 +81,9 @@ void imp::drawHoughLines(Mat& Input){
     cannyGrad(Input, can);
 
     vector<Vec2f> lines; // will hold the results of the detection
-    HoughLines(can, lines, 1, CV_PI/180, 150, 0, 0 ); // runs the actual detection
+    HoughLines(can, lines, 1, CV_PI/180, 150, 0, 0); // runs the actual detection
 
-    for( size_t i = 0; i < lines.size(); i++ )
+    for(size_t i = 0; i < lines.size(); i++)
     {
         float rho = lines[i][0], theta = lines[i][1];
         Point pt1, pt2;
@@ -94,6 +94,19 @@ void imp::drawHoughLines(Mat& Input){
         pt2.x = cvRound(x0 - 1000*(-b));
         pt2.y = cvRound(y0 - 1000*(a));
         line(Input, pt1, pt2, Scalar(0,0,255), 3, LINE_AA);
+    }
+}
+
+void imp::drawPHoughLines(Mat& Input){
+    Mat can;
+    cannyGrad(Input, can);
+
+    vector<Vec4i> lines; // will hold the results of the detection
+    HoughLinesP(can, lines, 1, CV_PI/180, 50, 50, 10); // runs the actual detection
+
+    for(size_t i = 0; i < lines.size(); i++){
+        Vec4i l = lines[i];
+        line(Input, Point(l[0], l[1]), Point(l[2], l[3]), Scalar(0,0,255), 3, LINE_AA);
     }
 }
 
@@ -123,8 +136,6 @@ void imp::hsvTuner(Mat& Input){
         cv::imshow("Filtered",Filtered);
         cv::waitKey(5);
     }
-
-
 }
 
 int imp::maxContourIndex(vector<vector<Point>> contours){

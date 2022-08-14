@@ -20,6 +20,7 @@ class imp{
 
         static void drawMainContour(Mat& Input);
         static void drawHoughLines(Mat& Input);
+        static void drawPHoughLines(Mat& Input);
         static void hsvTuner(Mat& Input);
     private:
         static int maxContourIndex(vector<vector<Point>> contours);
