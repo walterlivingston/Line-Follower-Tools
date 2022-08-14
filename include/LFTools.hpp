@@ -21,6 +21,7 @@ class lft{
         static vector<Point> findMainContour(Mat& Input);
         static Point2f findCenter(Mat& Input);
         static double calcYaw(Point2f origin, Point2f center);
+        static double calcContourYaw(Mat& Input);
 
         static void drawHoughLines(Mat& Input, double rho=1, double theta=CV_PI/180, double thresh=150, double srn=0, double stn=0);
         static void drawPHoughLines(Mat& Input, double rho=1, double theta=CV_PI/180, double thresh=50, double minL=50, double maxG=10);

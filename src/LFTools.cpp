@@ -101,6 +101,49 @@ double lft::calcYaw(Point2f origin, Point2f center){
     return atan((center.x - origin.x) / (center.y - origin.y));
 }
 
+double lft::calcContourYaw(Mat& Input){
+    vector<Point> contour = findMainContour(Input);
+    RotatedRect rect = minAreaRect(contour);
+    Point2f corners[4];
+    rect.points(corners);
+
+    Point2f bl = corners[0];
+    Point2f tl = corners[1];
+    Point2f tr = corners[2];
+    Point2f br = corners[3];
+    double bcx = (bl.x + br.x) / 2;
+    double bcy = (bl.y + br.y) / 2;
+    double tcx = (tl.x + tr.x) / 2;
+    double tcy = (tl.y + tr.y) / 2;
+
+    double dist1 = sqrt(pow(bcx - tcx, 2) + pow(bcy - tcy, 2));
+
+    double lmx = (tl.x + bl.x) / 2; // middle of left side x
+    double lmy = (tl.y + bl.y) / 2; // middle of left side y
+    double rmx = (tr.x + br.x) / 2; // middle of right side x
+    double rmy = (tr.y + br.y) / 2; // middle of right side y
+
+    double dist2 = sqrt(pow(lmx - rmx, 2) + pow(lmy - rmy, 2));
+
+    vector<Point2f> clp;
+    if(abs(dist1) > abs(dist2)){
+        clp.push_back(Point2f(bcx, bcy));
+        clp.push_back(Point2f(tcx, tcy));
+    }else{
+        clp.push_back(Point2f(rmx, rmy));
+        clp.push_back(Point2f(lmx, lmy));
+    }
+
+    double contourYaw = calcYaw(clp.at(0), clp.at(1));
+
+    for(int i = 0; i < 4; i++){
+        line(Input, corners[i], corners[(i+1)%4], Scalar(0,0,255), 3);
+    }
+    line(Input, clp.at(0), clp.at(1), Scalar(0,0,255), 3);
+    
+    return contourYaw;
+}
+
 void lft::drawHoughLines(Mat& Input, double rho, double theta, double thresh, double srn, double stn){
     Mat can;
     cannyGrad(Input, can);
