@@ -97,11 +97,7 @@ Point2f lft::findCenter(Mat& Input){
     return Point2f(cx, cy);
 }
 
-double lft::calcYaw(Point2f origin, Point2f center){
-    return atan((center.x - origin.x) / (center.y - origin.y));
-}
-
-double lft::calcContourYaw(Mat& Input){
+double lft::findCenterLineAngle(Mat& Input){
     vector<Point> contour = findMainContour(Input);
     RotatedRect rect = minAreaRect(contour);
     Point2f corners[4];
@@ -134,15 +130,23 @@ double lft::calcContourYaw(Mat& Input){
         clp.push_back(Point2f(lmx, lmy));
     }
 
-    double contourYaw = calcYaw(clp.at(0), clp.at(1));
+    double lineAngle = calcYaw(clp.at(0), clp.at(1));
 
     for(int i = 0; i < 4; i++){
         line(Input, corners[i], corners[(i+1)%4], Scalar(0,0,255), 3);
     }
     line(Input, clp.at(0), clp.at(1), Scalar(0,0,255), 3);
     
-    return contourYaw;
+    return lineAngle;
 }
+
+double lft::calcYaw(Point2f origin, Point2f center){
+    return atan((center.x - origin.x) / (center.y - origin.y));
+}
+
+
+
+
 
 void lft::drawHoughLines(Mat& Input, double rho, double theta, double thresh, double srn, double stn){
     Mat can;
