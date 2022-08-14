@@ -1,6 +1,6 @@
 CMakeFiles/LFTools.dir/src/LFTools.cpp.o: \
   /Users/walterlivingston/Documents/LineFollower/src/LFTools.cpp \
-  /Users/walterlivingston/Documents/LineFollower/include/image_proc.hpp \
+  /Users/walterlivingston/Documents/LineFollower/include/LFTools.hpp \
   /usr/local/Cellar/opencv/4.5.5_3/include/opencv4/opencv2/opencv.hpp \
   /usr/local/Cellar/opencv/4.5.5_3/include/opencv4/opencv2/opencv_modules.hpp \
   /usr/local/Cellar/opencv/4.5.5_3/include/opencv4/opencv2/core.hpp \

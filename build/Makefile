@@ -153,29 +153,29 @@ src/LFTools.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/LFTools.dir/build.make CMakeFiles/LFTools.dir/src/LFTools.cpp.s
 .PHONY : src/LFTools.cpp.s
 
-src/image_proc.o: src/image_proc.cpp.o
-.PHONY : src/image_proc.o
+src/main.o: src/main.cpp.o
+.PHONY : src/main.o
 
 # target to build an object file
-src/image_proc.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/LFTools.dir/build.make CMakeFiles/LFTools.dir/src/image_proc.cpp.o
-.PHONY : src/image_proc.cpp.o
+src/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/LFTools.dir/build.make CMakeFiles/LFTools.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
 
-src/image_proc.i: src/image_proc.cpp.i
-.PHONY : src/image_proc.i
+src/main.i: src/main.cpp.i
+.PHONY : src/main.i
 
 # target to preprocess a source file
-src/image_proc.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/LFTools.dir/build.make CMakeFiles/LFTools.dir/src/image_proc.cpp.i
-.PHONY : src/image_proc.cpp.i
+src/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/LFTools.dir/build.make CMakeFiles/LFTools.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
 
-src/image_proc.s: src/image_proc.cpp.s
-.PHONY : src/image_proc.s
+src/main.s: src/main.cpp.s
+.PHONY : src/main.s
 
 # target to generate assembly for a file
-src/image_proc.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/LFTools.dir/build.make CMakeFiles/LFTools.dir/src/image_proc.cpp.s
-.PHONY : src/image_proc.cpp.s
+src/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/LFTools.dir/build.make CMakeFiles/LFTools.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
 
 # Help Target
 help:
@@ -189,9 +189,9 @@ help:
 	@echo "... src/LFTools.o"
 	@echo "... src/LFTools.i"
 	@echo "... src/LFTools.s"
-	@echo "... src/image_proc.o"
-	@echo "... src/image_proc.i"
-	@echo "... src/image_proc.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
 .PHONY : help
 
 

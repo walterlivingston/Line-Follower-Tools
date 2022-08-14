@@ -9,7 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/walterlivingston/Documents/LineFollower/src/LFTools.cpp" "CMakeFiles/LFTools.dir/src/LFTools.cpp.o" "gcc" "CMakeFiles/LFTools.dir/src/LFTools.cpp.o.d"
-  "/Users/walterlivingston/Documents/LineFollower/src/image_proc.cpp" "CMakeFiles/LFTools.dir/src/image_proc.cpp.o" "gcc" "CMakeFiles/LFTools.dir/src/image_proc.cpp.o.d"
+  "/Users/walterlivingston/Documents/LineFollower/src/main.cpp" "CMakeFiles/LFTools.dir/src/main.cpp.o" "gcc" "CMakeFiles/LFTools.dir/src/main.cpp.o.d"
   )
 
 # Targets to which this target links.

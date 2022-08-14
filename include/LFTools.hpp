@@ -1,5 +1,5 @@
-#ifndef IMAGE_PROC_HPP
-#define IMAGE_PROC_HPP
+#ifndef LFTOOLS_HPP
+#define LFTOOLS_HPP
 
 #include <opencv2/opencv.hpp>
 #include <opencv2/highgui/highgui_c.h>
@@ -7,10 +7,10 @@
 using namespace cv;
 using namespace std;
 
-class imp{
+class lft{
     public:
-        imp();
-        ~imp();
+        lft();
+        ~lft();
 
         static void satFilt(Mat& Input, Mat& Output, int lowSat = 80, int highSat = 255);
         static void hsvFilt(Mat& Input, Mat& Output, Scalar low = Scalar(100,140,100), Scalar high = Scalar(110, 150, 190));

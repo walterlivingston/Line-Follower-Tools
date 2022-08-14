@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/LFTools.dir/src/LFTools.cpp.o"
   "CMakeFiles/LFTools.dir/src/LFTools.cpp.o.d"
-  "CMakeFiles/LFTools.dir/src/image_proc.cpp.o"
-  "CMakeFiles/LFTools.dir/src/image_proc.cpp.o.d"
+  "CMakeFiles/LFTools.dir/src/main.cpp.o"
+  "CMakeFiles/LFTools.dir/src/main.cpp.o.d"
   "LFTools"
   "LFTools.pdb"
 )
