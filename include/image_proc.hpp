@@ -18,7 +18,9 @@ class imp{
         static void laplaceGrad(Mat& Input, Mat& Output);
         static void cannyGrad(Mat& Input, Mat& Output);
 
-        static void drawMainContour(Mat& Input);
+        static vector<Point> drawMainContour(Mat& Input);
+        static Point2f findCenter(Mat& Input);
+
         static void drawHoughLines(Mat& Input, double rho=1, double theta=CV_PI/180, double thresh=150, double srn=0, double stn=0);
         static void drawPHoughLines(Mat& Input, double rho=1, double theta=CV_PI/180, double thresh=50, double minL=50, double maxG=10);
         static void hsvTuner(Mat& Input);

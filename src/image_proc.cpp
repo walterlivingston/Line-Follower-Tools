@@ -63,7 +63,7 @@ void imp::cannyGrad(Mat& Input, Mat& Output){
     Canny(Input_Gray, Output, 50, 200, 3);
 }
 
-void imp::drawMainContour(Mat& Input){    
+vector<Point> imp::drawMainContour(Mat& Input){    
     Mat sat;
     satFilt(Input, sat);
     Mat grad;
@@ -73,7 +73,28 @@ void imp::drawMainContour(Mat& Input){
 
     vector<vector<Point>> contours;
     findContours(comb, contours, RETR_TREE, CHAIN_APPROX_SIMPLE);
-    drawContours(Input, contours, maxContourIndex(contours), Scalar(0,255,0), 3);
+    int max_index = maxContourIndex(contours);
+    drawContours(Input, contours, max_index, Scalar(0,255,0), 3);
+    return contours.at(max_index);
+}
+
+// (TODO) ADD RECTANGLE OF INTEREST
+Point2f imp::findCenter(Mat& Input){
+    vector<Point> contour = drawMainContour(Input);
+    RotatedRect rect = minAreaRect(contour);
+    Point2f corners[4];
+    rect.points(corners);
+
+    double cx = rect.center.x;
+    double cy = rect.boundingRect().y + rect.boundingRect().height/2;
+
+    line(Input, Point(cx, 0), Point(cx, Input.size().height), Scalar(255,0,0), 3);
+    line(Input, Point(0, cy), Point(Input.size().width, cy), Scalar(255,0,0), 3);
+
+    for(int i = 0; i < 4; i++)
+        line(Input, corners[i], corners[(i+1)%4], Scalar(0,0,255), 3);
+
+    return Point2f(cx, cy);
 }
 
 void imp::drawHoughLines(Mat& Input, double rho, double theta, double thresh, double srn, double stn){
