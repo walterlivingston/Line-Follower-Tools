@@ -1,6 +1,6 @@
 #include "image_proc.hpp"
 
-void imp::satFilt(Mat& Input, Mat& Output, int lowSat = 80, int highSat = 255){
+void imp::satFilt(Mat& Input, Mat& Output, int lowSat, int highSat){
     // Intialization.
     cv::Mat hls;
     // Convert Color to HLS Colorspace
@@ -15,7 +15,7 @@ void imp::satFilt(Mat& Input, Mat& Output, int lowSat = 80, int highSat = 255){
     threshold(chan, Output, lowSat, highSat, THRESH_BINARY);// $$ Min and Max Threshold (80 and 255 by default) $$
 }
 
-void imp::hsvFilt(Mat& Input, Mat& Output, Scalar low = Scalar(100,140,100), Scalar high = Scalar(110, 150, 190)){
+void imp::hsvFilt(Mat& Input, Mat& Output, Scalar low, Scalar high){
     Mat hsv;
     cvtColor(Input, hsv, COLOR_BGR2HSV);
     inRange(Input, low, high, Output);

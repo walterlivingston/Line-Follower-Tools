@@ -5,7 +5,7 @@ int main(int argc, char** argv){
     Mat frame;
     while(true){
         vid.read(frame);
-        imp::drawPHoughLines(frame);
+        imp::drawMainContour(frame);
         imshow("Webcam", frame);
         waitKey(1);
     }

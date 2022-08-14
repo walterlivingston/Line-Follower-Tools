@@ -12,8 +12,8 @@ class imp{
         imp();
         ~imp();
 
-        static void satFilt(Mat& Input, Mat& Output, int lowSat, int highSat);
-        static void hsvFilt(Mat& Input, Mat& Output, Scalar low, Scalar high);
+        static void satFilt(Mat& Input, Mat& Output, int lowSat = 80, int highSat = 255);
+        static void hsvFilt(Mat& Input, Mat& Output, Scalar low = Scalar(100,140,100), Scalar high = Scalar(110, 150, 190));
         static void sobelGrad(Mat& Input, Mat& Output);
         static void laplaceGrad(Mat& Input, Mat& Output);
         static void cannyGrad(Mat& Input, Mat& Output);
