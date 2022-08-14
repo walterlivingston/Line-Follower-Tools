@@ -73,29 +73,29 @@ CMakeFiles/LFTools.dir/src/LFTools.cpp.o: CMakeFiles/LFTools.dir/flags.make
 CMakeFiles/LFTools.dir/src/LFTools.cpp.o: ../src/LFTools.cpp
 CMakeFiles/LFTools.dir/src/LFTools.cpp.o: CMakeFiles/LFTools.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/walterlivingston/Documents/LineFollower/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/LFTools.dir/src/LFTools.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/LFTools.dir/src/LFTools.cpp.o -MF CMakeFiles/LFTools.dir/src/LFTools.cpp.o.d -o CMakeFiles/LFTools.dir/src/LFTools.cpp.o -c /Users/walterlivingston/Documents/LineFollower/src/LFTools.cpp
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/LFTools.dir/src/LFTools.cpp.o -MF CMakeFiles/LFTools.dir/src/LFTools.cpp.o.d -o CMakeFiles/LFTools.dir/src/LFTools.cpp.o -c /Users/walterlivingston/Documents/LineFollower/src/LFTools.cpp
 
 CMakeFiles/LFTools.dir/src/LFTools.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LFTools.dir/src/LFTools.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/walterlivingston/Documents/LineFollower/src/LFTools.cpp > CMakeFiles/LFTools.dir/src/LFTools.cpp.i
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/walterlivingston/Documents/LineFollower/src/LFTools.cpp > CMakeFiles/LFTools.dir/src/LFTools.cpp.i
 
 CMakeFiles/LFTools.dir/src/LFTools.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LFTools.dir/src/LFTools.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/walterlivingston/Documents/LineFollower/src/LFTools.cpp -o CMakeFiles/LFTools.dir/src/LFTools.cpp.s
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/walterlivingston/Documents/LineFollower/src/LFTools.cpp -o CMakeFiles/LFTools.dir/src/LFTools.cpp.s
 
 CMakeFiles/LFTools.dir/src/main.cpp.o: CMakeFiles/LFTools.dir/flags.make
 CMakeFiles/LFTools.dir/src/main.cpp.o: ../src/main.cpp
 CMakeFiles/LFTools.dir/src/main.cpp.o: CMakeFiles/LFTools.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/walterlivingston/Documents/LineFollower/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/LFTools.dir/src/main.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/LFTools.dir/src/main.cpp.o -MF CMakeFiles/LFTools.dir/src/main.cpp.o.d -o CMakeFiles/LFTools.dir/src/main.cpp.o -c /Users/walterlivingston/Documents/LineFollower/src/main.cpp
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/LFTools.dir/src/main.cpp.o -MF CMakeFiles/LFTools.dir/src/main.cpp.o.d -o CMakeFiles/LFTools.dir/src/main.cpp.o -c /Users/walterlivingston/Documents/LineFollower/src/main.cpp
 
 CMakeFiles/LFTools.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LFTools.dir/src/main.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/walterlivingston/Documents/LineFollower/src/main.cpp > CMakeFiles/LFTools.dir/src/main.cpp.i
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/walterlivingston/Documents/LineFollower/src/main.cpp > CMakeFiles/LFTools.dir/src/main.cpp.i
 
 CMakeFiles/LFTools.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LFTools.dir/src/main.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/walterlivingston/Documents/LineFollower/src/main.cpp -o CMakeFiles/LFTools.dir/src/main.cpp.s
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/walterlivingston/Documents/LineFollower/src/main.cpp -o CMakeFiles/LFTools.dir/src/main.cpp.s
 
 # Object files for target LFTools
 LFTools_OBJECTS = \

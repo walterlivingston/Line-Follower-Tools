@@ -63,7 +63,7 @@ void lft::cannyGrad(Mat& Input, Mat& Output){
     Canny(Input_Gray, Output, 50, 200, 3);
 }
 
-vector<Point> lft::drawMainContour(Mat& Input){    
+vector<Point> lft::findMainContour(Mat& Input){    
     Mat sat;
     satFilt(Input, sat);
     Mat grad;
@@ -80,7 +80,7 @@ vector<Point> lft::drawMainContour(Mat& Input){
 
 // (TODO) ADD RECTANGLE OF INTEREST
 Point2f lft::findCenter(Mat& Input){
-    vector<Point> contour = drawMainContour(Input);
+    vector<Point> contour = findMainContour(Input);
     RotatedRect rect = minAreaRect(contour);
     Point2f corners[4];
     rect.points(corners);
@@ -95,6 +95,10 @@ Point2f lft::findCenter(Mat& Input){
         line(Input, corners[i], corners[(i+1)%4], Scalar(0,0,255), 3);
 
     return Point2f(cx, cy);
+}
+
+double lft::calcYaw(Point2f origin, Point2f center){
+    return atan((center.x - origin.x) / (center.y - origin.y));
 }
 
 void lft::drawHoughLines(Mat& Input, double rho, double theta, double thresh, double srn, double stn){

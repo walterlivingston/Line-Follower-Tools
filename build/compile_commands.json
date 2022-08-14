@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/Users/walterlivingston/Documents/LineFollower/build",
+  "command": "/usr/bin/clang++  -I/Users/walterlivingston/Documents/LineFollower/include -isystem /usr/local/Cellar/opencv/4.5.5_3/include/opencv4 -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++11 -o CMakeFiles/LFTools.dir/src/LFTools.cpp.o -c /Users/walterlivingston/Documents/LineFollower/src/LFTools.cpp",
+  "file": "/Users/walterlivingston/Documents/LineFollower/src/LFTools.cpp"
+},
+{
+  "directory": "/Users/walterlivingston/Documents/LineFollower/build",
+  "command": "/usr/bin/clang++  -I/Users/walterlivingston/Documents/LineFollower/include -isystem /usr/local/Cellar/opencv/4.5.5_3/include/opencv4 -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++11 -o CMakeFiles/LFTools.dir/src/main.cpp.o -c /Users/walterlivingston/Documents/LineFollower/src/main.cpp",
+  "file": "/Users/walterlivingston/Documents/LineFollower/src/main.cpp"
+}
+]
